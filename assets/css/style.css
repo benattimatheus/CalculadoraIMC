@@ -1,16 +1,53 @@
 /* Configurações gerais */
-
-
+@font-face {
+    font-family: '';
+    src: url('') format('opentype');
+}
+body{
+  /*font-family: ;*/
+}
+span{
+  font-size: 15px;
+  
+}
 
 /* ID's */
 
 #idFundo{
     width: 100%;
     height: 100%;
-    background: rgb(23,18,101);
-    background: linear-gradient(90deg, rgba(23,18,101,1) 0%, rgba(0,25,255,1) 27%, rgba(0,227,255,1) 35%, rgba(47,215,47,1) 54%, rgba(235,255,0,1) 65%, rgba(255,150,0,1) 76%, rgba(255,105,0,1) 87%, rgba(255,0,0,1) 100%);
+   background: rgb(23,18,101);
+background: linear-gradient(50deg, rgba(23,18,101,0.5010796554950105) 0%, rgba(0,25,255,0.5) 24%, rgba(0,184,229,0.5) 36%, rgba(47,215,47,0.5) 54%, rgba(235,255,0,0.5) 65%, rgba(255,150,0,0.5) 76%, rgba(255,105,0,0.5) 87%, rgba(255,0,0,0.5) 100%);
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  border:solid red 3px;
 }
 
+#idConteudo{
+  /* border: solid red 1px; */
+  width: 60%;
+  height: 65%;
+  border-radius: 7px;
+  background-color: white;
+  box-shadow: 7px 7px 10px 1px rgba(0, 0, 0, 0.35) ;
+}
 
+#idFormulario{
+  /* border: solid green 3px; */
+  margin-left: 5%;
+  margin-top: 2%;
+
+}
 
 /* Classes */
+
+.cabecalho{
+    background-color:rgba(4, 37, 113, 1);
+    padding: 5px;
+    /* border: solid blue 2px; */
+    display: flex;
+    justify-content: center;
+    color: white;
+    border-radius: 7px 7px 0px 0px;
+}
