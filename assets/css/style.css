@@ -26,7 +26,7 @@ background: linear-gradient(50deg, rgba(23,18,101,0.5010796554950105) 0%, rgba(0
 
 #idConteudo{
   /* border: solid red 1px; */
-  width: 60%;
+  width: 40%;
   height: 65%;
   border-radius: 7px;
   background-color: white;
@@ -38,6 +38,27 @@ background: linear-gradient(50deg, rgba(23,18,101,0.5010796554950105) 0%, rgba(0
   margin-left: 5%;
   margin-top: 2%;
 
+}
+
+#idNomeForm{
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+#idDataNascForm{
+  margin-bottom: 12px;
+}
+
+#idSexoForm{
+  margin-bottom: 12px;  
+}
+
+#idPesoForm{
+  margin-bottom: 12px;
+}
+
+#idAlturaForm{
+  margin-bottom: 12px;
 }
 
 /* Classes */
