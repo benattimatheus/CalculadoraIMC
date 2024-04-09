@@ -1,7 +1,7 @@
 <?php
 
 enum ClassificacaoImcEnum: string{
-    case Magreaza = 'Magreza';
+    case Magreza = 'Magreza';
     case Normal = 'Normal';
     case Sobrepeso = 'Sobrepeso';
     case ObesidadeGrauI = 'Obesidade Grau I';

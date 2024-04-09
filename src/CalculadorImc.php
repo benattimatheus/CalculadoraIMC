@@ -7,7 +7,7 @@ class CalculadoraImc{
         $this->usuario=$usuario;
     }
 
-    public fucntion calcular(): float{
+    public function calcular(): float{
         return $this->usuario->getPeso()/($this->usuario->getAltura()*$this->usuario->getAltura());
     }
 }
