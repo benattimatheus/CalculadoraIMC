@@ -14,7 +14,7 @@
             <span>Calculadora IMC</span>  
           </div>
           <div id="idFormulario">
-            <form>
+            <form action="/app.php" method="POST">
               <div id="idNomeForm">
                <label for="idNome">Nome: </label>
                <input type="text" id="idNome" name="nome"><br>
@@ -49,7 +49,9 @@
                 </select>
               </div>
 
-              
+              <div>
+                <input type="submit" value="Calcular">
+              </div>
             </form>
           </div>
       </div>
