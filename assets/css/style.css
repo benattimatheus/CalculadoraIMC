@@ -11,7 +11,7 @@ span {
 
 }
 
-a:visited{
+a:visited {
   text-decoration: none;
   color: black;
 }
@@ -19,16 +19,12 @@ a:visited{
 a {
   text-decoration: none;
   background:
-    linear-gradient(
-      to right,
+    linear-gradient(to right,
       rgb(255, 255, 255),
-      rgb(255, 255, 255)
-    ),
-    linear-gradient(
-      to right,
+      rgb(255, 255, 255)),
+    linear-gradient(to right,
       rgba(0, 204, 255, 1),
-      rgb(201, 11, 191)
-  );
+      rgb(201, 11, 191));
   background-size: 100% 3px, 0 3px;
   background-position: 100% 100%, 0 100%;
   background-repeat: no-repeat;
@@ -48,8 +44,8 @@ a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgb(34,61,195);
-  background: linear-gradient(20deg, rgba(34,61,195,1) 0%, rgba(91,253,45,1) 100%);
+  background: rgb(34, 61, 195);
+  background: linear-gradient(20deg, rgba(34, 61, 195, 1) 0%, rgba(91, 253, 45, 1) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,16 +64,18 @@ a:hover {
 
 #idFormulario {
   /* border: solid green 3px; */
-  margin: 3% auto; 
+  margin: 3% auto;
   width: 90%;
   max-width: 100%;
-  max-height: 100%; 
+  max-height: 100%;
   box-sizing: border-box;
 }
 
-#idFormulario input, #idFormulario select, #idFormulario label {
+#idFormulario input,
+#idFormulario select,
+#idFormulario label {
   width: 100%;
-  height: auto; 
+  height: auto;
   box-sizing: border-box;
 }
 
@@ -108,11 +106,11 @@ a:hover {
   margin-bottom: 12px;
 }
 
-#idInformacoes{
-  margin: 3% auto; 
+#idInformacoes {
+  margin: 3% auto;
   width: 90%;
   max-width: 100%;
-  max-height: 100%; 
+  max-height: 100%;
   box-sizing: border-box;
 }
 
@@ -133,15 +131,15 @@ a:hover {
   padding: 3% 0%;
   text-align: center;
   cursor: pointer;
-  color:white;
+  color: white;
   background: rgba(4, 37, 113, 1);
-  border:none;
+  border: none;
   border-radius: 3px;
   outline: none;
   transition: 0.5s ease-in-out;
 }
 
-.botaoCalcular:hover{
+.botaoCalcular:hover {
   transition: 0.5s ease-in-out;
   background: #6586f5;
 }

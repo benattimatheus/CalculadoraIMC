@@ -25,14 +25,14 @@ class CalculadoraImc
         $sexo = $this->usuario->getSexo()->value;
         $imc = $this->calcular();
 
-        if ($idade >= 140){
+        if ($idade >= 140) {
             return 'Matusalém';
-        } else if ($idade >= 20){
+        } else if ($idade >= 20) {
             return ClassificacaoImcEnum::classifica($imc);
-        } else{
+        } else {
             if ($idade >= 10 && $idade < 20) {
                 $imc = $this->calcular();
-    
+
                 if ($sexo === 'Feminino') {
                     return $this->classificarPorIdadePercentilFeminino($idade, $imc);
                 } elseif ($sexo === 'Masculino') {

@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         echo $template;
         exit;
-    } 
+    }
 
     $usuario = new Usuario(
         nome: $_POST['nome'],
@@ -105,37 +105,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     } else {
 
-    
-    $calculadora = new CalculadoraImc($usuario);
-    $resultado = $calculadora->classificarPorFaixaEtariaSexo();
 
-    // 1) ler o template de resposta
-    $template = file_get_contents(__DIR__ . '/src/templates/resultado.html');
+        $calculadora = new CalculadoraImc($usuario);
+        $resultado = $calculadora->classificarPorFaixaEtariaSexo();
 
-    // 2) trocar cada valor estatico pelo valor do script
-    $template = str_replace(
-        [
-            '{{USUARIO}}',
-            '{{PESO}}',
-            '{{ALTURA}}',
-            '{{IDADE}}',
-            '{{SEXO}}',
-            '{{ICM}}',
-            '{{CLASSIFICACAO}}'
-        ],
-        [
-            $usuario->getNome(),
-            $usuario->getPeso(),
-            $usuario->getAltura(),
-            $usuario->getIdadeAtual(),
-            $usuario->getSexo()->value,
-            $calculadora->calcular(),
-            $resultado
-        ],
-        $template
-    );
+        // 1) ler o template de resposta
+        $template = file_get_contents(__DIR__ . '/src/templates/resultado.html');
+
+        // 2) trocar cada valor estatico pelo valor do script
+        $template = str_replace(
+            [
+                '{{USUARIO}}',
+                '{{PESO}}',
+                '{{ALTURA}}',
+                '{{IDADE}}',
+                '{{SEXO}}',
+                '{{ICM}}',
+                '{{CLASSIFICACAO}}'
+            ],
+            [
+                $usuario->getNome(),
+                $usuario->getPeso(),
+                $usuario->getAltura(),
+                $usuario->getIdadeAtual(),
+                $usuario->getSexo()->value,
+                $calculadora->calcular(),
+                $resultado
+            ],
+            $template
+        );
 
 
-    echo $template;
-}
+        echo $template;
+    }
 }
