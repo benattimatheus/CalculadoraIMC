@@ -1,43 +1,141 @@
 <?php
 
-require_once__DIR__.'/src/Usuario.php';
+require_once __DIR__ . '/src/Usuario.php';
+require_once __DIR__ . '/src/CalculadoraImc.php';
+require_once __DIR__ . '/src/SexoEnum.php';
+require_once __DIR__ . '/src/ClassificacaoImcEnum.php';
 
-require_once__DIR__.'/src/CalculadoraImc.php';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nome = $_POST['nome'];
+    $peso = $_POST['peso'];
+    $altura = $_POST['altura'];
+    $sexo = $_POST['sexo'];
+    $dataNasc = $_POST['dataNasc'];
 
-require_once__DIR__.'/src/SexoEnum.php';
+    if (empty($nome) || empty($peso) || empty($altura) || empty($sexo) || empty($dataNasc)) {
+        $template = file_get_contents(__DIR__ . '/src/templates/resultado.html');
 
-require_once__DIR__.'/src/ClassificacaoImcEnum.php';
+        $template = str_replace(
+            [
+                '{{USUARIO}}',
+                '{{PESO}}',
+                '{{ALTURA}}',
+                '{{IDADE}}',
+                '{{SEXO}}',
+                '{{ICM}}',
+                '{{CLASSIFICACAO}}'
+            ],
+            [
+                'Todos os campos devem ser preenchidos',
+                '',
+                '',
+                '',
+                '',
+                '',
+                ''
+            ],
+            $template
+        );
 
-$usuario = new Usuario(nome: $_POST['idNome'], peso: $_POST['idPeso'], altura: $_POST['idAltura'],
-    sexo: SexoEnum::from($_POST['idSexo']), dataNascimento: new DateTimeImmutable($_POST['idDataNasc']));
 
-$calculadora = new CalculadoraImc($usuario);
+        echo $template;
+        exit;
+    } 
 
-$resultado = ClassificacaoImcEnum::classifica($calculadora->calcular());
+    $usuario = new Usuario(
+        nome: $_POST['nome'],
+        peso: $_POST['peso'],
+        altura: $_POST['altura'],
+        sexo: SexoEnum::from($_POST['sexo']),
+        dataNascimento: new DateTimeImmutable($_POST['dataNasc'])
+    );
 
-$template = file_get_contents(__DIR__.'/src/templates/resultado.html');
+    if ($altura < 0.8 || $altura > 3.0) {
+        $template = file_get_contents(__DIR__ . '/src/templates/resultado.html');
 
-$template = str_replace(
-    [
-        '{{USUARIO}}',
-        '{{PESO}}',
-        '{{ALTURA}}',
-        '{{IDADE}}',
-        '{{SEXO}}',
-        '{{ICM}}',
-        '{{CLASSIFICACAO}}'
-    ],
+        $template = str_replace(
+            [
+                '{{USUARIO}}',
+                '{{PESO}}',
+                '{{ALTURA}}',
+                '{{IDADE}}',
+                '{{SEXO}}',
+                '{{ICM}}',
+                '{{CLASSIFICACAO}}'
+            ],
+            [
+                $usuario->getNome(),
+                '',
+                'Insira uma altura válida (Entre 0.8 m e 3.0 m)',
+                $usuario->getIdadeAtual(),
+                $usuario->getSexo()->value,
+                '',
+                ''
+            ],
+            $template
+        );
 
-    [
-        $usuario->getNome(),
-        $usuario->getPeso(),
-        $usuario->getAltura(),
-        $usuario->getIdadeAtual(),
-        $usuario->getSexo()->value,
-        $calculadora->calcular(),
-        $resultado
-    ],
+        echo $template;
+        exit;
+    } else if ($peso > 650) {
+        $template = file_get_contents(__DIR__ . '/src/templates/resultado.html');
 
-    $template);
+        $template = str_replace(
+            [
+                '{{USUARIO}}',
+                '{{PESO}}',
+                '{{ALTURA}}',
+                '{{IDADE}}',
+                '{{SEXO}}',
+                '{{ICM}}',
+                '{{CLASSIFICACAO}}'
+            ],
+            [
+                $usuario->getNome(),
+                'Insira um peso válido (Até 650kg)',
+                '',
+                '',
+                '',
+                '',
+                ''
+            ],
+            $template
+        );
+        echo $template;
+        exit;
+    } else {
 
-echo $template;
+    
+    $calculadora = new CalculadoraImc($usuario);
+    $resultado = $calculadora->classificarPorFaixaEtariaSexo();
+
+    // 1) ler o template de resposta
+    $template = file_get_contents(__DIR__ . '/src/templates/resultado.html');
+
+    // 2) trocar cada valor estatico pelo valor do script
+    $template = str_replace(
+        [
+            '{{USUARIO}}',
+            '{{PESO}}',
+            '{{ALTURA}}',
+            '{{IDADE}}',
+            '{{SEXO}}',
+            '{{ICM}}',
+            '{{CLASSIFICACAO}}'
+        ],
+        [
+            $usuario->getNome(),
+            $usuario->getPeso(),
+            $usuario->getAltura(),
+            $usuario->getIdadeAtual(),
+            $usuario->getSexo()->value,
+            $calculadora->calcular(),
+            $resultado
+        ],
+        $template
+    );
+
+
+    echo $template;
+}
+}
