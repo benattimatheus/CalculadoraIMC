@@ -114,6 +114,16 @@ a:hover {
   box-sizing: border-box;
 }
 
+#idNome, #idDataNasc, #idPeso, #idAltura{
+  margin-top: 2px;
+  padding: 5px;
+}
+
+#idSexo {
+   padding: 5px 5px 5px 0px; 
+}
+
+
 /* Classes */
 
 .cabecalho {
@@ -126,7 +136,9 @@ a:hover {
 }
 
 .botaoCalcular {
-  width: 55%;
+  /* width: 55%; */
+  width: 97.3%;
+  margin-left: 1.5%;
   padding: 3% 0%;
   text-align: center;
   cursor: pointer;
