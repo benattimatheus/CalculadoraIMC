@@ -4,6 +4,7 @@ require_once __DIR__ . '/src/Usuario.php';
 require_once __DIR__ . '/src/CalculadoraImc.php';
 require_once __DIR__ . '/src/SexoEnum.php';
 require_once __DIR__ . '/src/ClassificacaoImcEnum.php';
+require_once __DIR__ . '/src/ExemploException.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome = $_POST['nome'];
@@ -120,6 +121,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 '{{ALTURA}}',
                 '{{IDADE}}',
                 '{{SEXO}}',
+                '{{ERRO}}'
                 '{{ICM}}',
                 '{{CLASSIFICACAO}}'
             ],
@@ -129,6 +131,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $usuario->getAltura(),
                 $usuario->getIdadeAtual(),
                 $usuario->getSexo()->value,
+                $e->getMessage();
                 $calculadora->calcular(),
                 $resultado
             ],
