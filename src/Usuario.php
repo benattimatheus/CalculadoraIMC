@@ -48,18 +48,26 @@ class Usuario{
             throw new ExemploException('O peso deve ser um número positivo.', 2);
         }
 
+        if (!is_numeric($this->peso) || $this->peso > 650) {
+            throw new ExemploException('Insira um peso válido (0 - 650).', 3);
+        }
+
         if (!is_numeric($this->altura) || $this->altura <= 0) {
-            throw new ExemploException('A altura deve ser um número positivo.', 3);
+            throw new ExemploException('A altura deve ser um número positivo.', 4);
+        }
+
+        if (!is_numeric($this->altura) || $this->altura > 2.8) {
+            throw new ExemploException('Insira uma altura válida (0 - 2.8m).', 5);
         }
 
         if ($this->dataNascimento > new DateTimeImmutable()) {
-            throw new ExemploException('A data de nascimento não pode estar no futuro.', 4);
+            throw new ExemploException('A data de nascimento não pode estar no futuro.', 6);
         }
     }
 
     public function calcularIMC() {
         if ($this->altura == 0) {
-            throw new ExemploException('Altura não pode ser zero.', 5);
+            throw new ExemploException('Altura não pode ser zero.', 7);
         }
     
         return $this->peso / ($this->altura * $this->altura);
