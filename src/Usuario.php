@@ -40,34 +40,22 @@ class Usuario{
     }
 
     public function validarDadosEntrada() {
-        if (empty($this->nome) || empty($this->peso) || empty($this->altura) || empty($this->sexo) || empty($this->dataNascimento)) {
+        if (empty($this->nome) || $this->peso === null || $this->altura === null || $this->sexo->value === '0' || empty($this->dataNascimento)) {
             throw new ExemploException('Todos os campos são obrigatórios.', 1);
         }
 
-        if (!is_numeric($this->peso) || $this->peso <= 0) {
-            throw new ExemploException('O peso deve ser um número positivo.', 2);
+        if (!is_numeric($this->peso) || $this->peso <= 0 || $this->peso > 650) {
+            throw new ExemploException('O peso deve ser um número positivo e válido (0kg - 650kg).', 2);
         }
 
-        if (!is_numeric($this->peso) || $this->peso > 650) {
-            throw new ExemploException('Insira um peso válido (0 - 650).', 3);
-        }
-
-        if (!is_numeric($this->altura) || $this->altura <= 0) {
-            throw new ExemploException('A altura deve ser um número positivo.', 4);
-        }
-
-        if (!is_numeric($this->altura) || $this->altura > 2.8) {
-            throw new ExemploException('Insira uma altura válida (0 - 2.8m).', 5);
-        }
-
-        if ($this->dataNascimento > new DateTimeImmutable()) {
-            throw new ExemploException('A data de nascimento não pode estar no futuro.', 6);
+        if (!is_numeric($this->altura) || $this->altura <= 0 || $this->altura > 2.8) {
+            throw new ExemploException('A altura deve ser um número positivo e válido (0kg - 2.8m).', 3);
         }
     }
 
     public function calcularIMC() {
         if ($this->altura == 0) {
-            throw new ExemploException('Altura não pode ser zero.', 7);
+            throw new ExemploException('Altura não pode ser zero.', 4);
         }
     
         return $this->peso / ($this->altura * $this->altura);

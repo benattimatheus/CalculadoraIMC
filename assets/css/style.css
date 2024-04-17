@@ -123,6 +123,9 @@ a:hover {
    padding: 5px 5px 5px 0px; 
 }
 
+#idErro {
+  color: red;
+}
 
 /* Classes */
 
