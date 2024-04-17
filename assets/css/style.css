@@ -157,10 +157,10 @@ a:hover {
   border: none;
   border-radius: 3px;
   outline: none;
-  transition: 0.5s ease-in-out;
+  transition: 0.4s ease-in-out;
 }
 
 .botaoCalcular:hover {
-  transition: 0.5s ease-in-out;
+  transition: 0.4s ease-in-out;
   background: #6586f5;
 }

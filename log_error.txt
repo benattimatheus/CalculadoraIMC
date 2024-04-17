@@ -114,3 +114,49 @@ Line:41
 ErrorCode: 5
 Stack Strace: #0 C:\Users\Matheus\Desktop\LogCalculadora\aplicacao\app.php(33): CalculadoraImc->classificarPorFaixaEtariaSexo()
 #1 {main}
+Message: Todos os campos são obrigatórios.
+File: C:\Users\Matheus\Desktop\CalculadoraIMC\app.php
+Line:18
+ErrorCode: 1
+Stack Strace: #0 {main}
+Message: Todos os campos são obrigatórios.
+File: C:\Users\Matheus\Desktop\CalculadoraIMC\app.php
+Line:18
+ErrorCode: 1
+Stack Strace: #0 {main}
+Message: Todos os campos são obrigatórios.
+File: C:\Users\Matheus\Desktop\CalculadoraIMC\app.php
+Line:18
+ErrorCode: 1
+Stack Strace: #0 {main}
+Message: Todos os campos são obrigatórios.
+File: C:\Users\Matheus\Desktop\CalculadoraIMC\app.php
+Line:18
+ErrorCode: 1
+Stack Strace: #0 {main}
+Message: Todos os campos são obrigatórios.
+File: C:\Users\Matheus\Desktop\CalculadoraIMC\app.php
+Line:18
+ErrorCode: 1
+Stack Strace: #0 {main}
+Message: Insira um ano válido.
+File: C:\Users\Matheus\Desktop\CalculadoraIMC\src\Usuario.php
+Line:56
+ErrorCode: 4
+Stack Strace: #0 C:\Users\Matheus\Desktop\CalculadoraIMC\app.php(28): Usuario->validarDadosEntrada()
+#1 {main}
+Message: Todos os campos são obrigatórios.
+File: C:\Users\Matheus\Desktop\CalculadoraIMC\app.php
+Line:18
+ErrorCode: 1
+Stack Strace: #0 {main}
+Message: Todos os campos são obrigatórios.
+File: C:\Users\Matheus\Desktop\CalculadoraIMC\app.php
+Line:18
+ErrorCode: 1
+Stack Strace: #0 {main}
+Message: Todos os campos são obrigatórios.
+File: C:\Users\Matheus\Desktop\CalculadoraIMC\app.php
+Line:18
+ErrorCode: 1
+Stack Strace: #0 {main}
