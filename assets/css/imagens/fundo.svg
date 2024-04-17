@@ -1,0 +1,24 @@
+<svg width="1440" height="1024" viewBox="0 0 1440 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_68_2)">
+<rect width="1440" height="1024" fill="url(#paint0_linear_68_2)"/>
+<circle cx="102" cy="89" r="140.033" stroke="#D888F1" stroke-opacity="0.2" stroke-width="11.9346"/>
+<circle cx="398" cy="385" r="143.869" stroke="#D888F1" stroke-opacity="0.2" stroke-width="12.2616"/>
+<circle cx="622" cy="635" r="117.014" stroke="#D888F1" stroke-opacity="0.2" stroke-width="9.97275"/>
+<circle cx="1027" cy="807" r="117.014" stroke="#053070" stroke-opacity="0.2" stroke-width="9.97275"/>
+<circle cx="818" cy="348" r="117.014" stroke="#053070" stroke-opacity="0.2" stroke-width="9.97275"/>
+<circle cx="294" cy="813" r="143.869" stroke="#D888F1" stroke-opacity="0.2" stroke-width="12.2616"/>
+<circle cx="1349" cy="535" r="143.869" stroke="#053070" stroke-opacity="0.2" stroke-width="12.2616"/>
+<circle cx="1135" cy="156" r="103.586" stroke="#053070" stroke-opacity="0.25" stroke-width="8.82834"/>
+<circle cx="1069.5" cy="235.5" r="62.8229" stroke="#053070" stroke-opacity="0.2" stroke-width="5.35422"/>
+<circle cx="-15.5" cy="587.5" r="112.698" stroke="#D888F1" stroke-opacity="0.25" stroke-width="9.6049"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_68_2" x1="168" y1="1024" x2="1350.5" y2="-1.45155e-05" gradientUnits="userSpaceOnUse">
+<stop offset="0.00301302" stop-color="#053070"/>
+<stop offset="0.916918" stop-color="#D888F1"/>
+</linearGradient>
+<clipPath id="clip0_68_2">
+<rect width="1440" height="1024" fill="white"/>
+</clipPath>
+</defs>
+</svg>
